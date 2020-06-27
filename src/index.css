@@ -50,3 +50,43 @@ code {
   border-radius: 25px;
   padding: 8px;
 }
+
+.testbox {
+  /* border: 1px solid purple; */
+  text-align: center;
+  padding: 4px;
+}
+
+.testbox-card {
+  /* border: 1px solid darkblue; */
+  background-color: #FFFECB;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 8px;
+}
+
+.testbox-tab {
+  background-color: #FEA82F;
+  color: white;
+  padding-top: 4px;
+}
+
+.testbox img {
+  /* width: 100%;
+  height: auto; */
+  max-width: 300px;
+  max-height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.testbox-icons {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 16px;
+}
+
+/* .img-box {
+  object-fit: cover;
+  max-width: 100%;
+} */

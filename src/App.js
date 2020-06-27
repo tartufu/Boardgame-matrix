@@ -2,6 +2,7 @@ import React from 'react';
 // import Testing from './components/testing';
 import Header from './components/Header';
 import GamesList from './components/GamesList';
+import TestBox from './components/Testbox';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className="main-body">
         <Header />
         <GamesList />
+        <TestBox />
       </div>
     </div>
   );
