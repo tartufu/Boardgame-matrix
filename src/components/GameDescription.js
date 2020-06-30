@@ -1,16 +1,13 @@
 import React from 'react';
 
-function GameImg(props) {
+function GameDescription(props) {
 
     return(
-        <div className="game-img">
-            <img src={props.image} alt="boardgame-cover"></img>
-        </div>
-        
+    <p>LOREM IPSUM LOR MAI GAIIIII</p>       
     );
 }
 
-export default GameImg;
+export default GameDescription;
 
 //props.listings && props.listings.map(listing => ( <p>{listing.id}</p>)) => only loads if data has been fully loaded 
 

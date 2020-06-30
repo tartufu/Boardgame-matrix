@@ -1,5 +1,8 @@
 import React from 'react';
-import GameImg from './GameImg'
+import GameImg from './GameImg';
+import GameTitle from './GameTitle';
+import GameDescription from './GameDescription';
+import GameIcons from './GameIcons';
 
 function GameCard(props) {
 
@@ -20,12 +23,14 @@ function GameCard(props) {
                     <React.Fragment>
                         <div className="col-md-3 gamename-container" key={listing.gameId}>
                             <div className="gamename-container2">
-                                <GameImg image={listing.thumbnail}/>
-                                <img src ={listing.thumbnail}  alt="bg-thumbnail" />
-                                <p>{listing.name}   </p>
-                                <p>{listing.averageRating}</p>
-                                <p> {listing.maxPlayers} Players Max</p>
-                                <p> {listing.playingTime} Min Play Time</p>
+                                <GameImg image={listing.image}/>
+                                <GameTitle title={listing.name} className="game-title"/>
+                                <GameDescription />
+                                <GameIcons 
+                                    rating={listing.averageRating}
+                                    maxPlayers={listing.maxPlayers}
+                                    playingTime={listing.playingTime}
+                                />
                             </div>
                         </div>
                     </React.Fragment>
