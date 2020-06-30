@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GameName from './GameName';
+import GameCard from './GameCard';
 import Username from './Username';
 
 class GamesList extends Component {
@@ -55,7 +55,12 @@ class GamesList extends Component {
         .then(data => this.setState({ 
             listings: data,
             randomButtonShow: true
-        }));
+        }, function() {
+            for (let i = 0; i < this.state.listings.length; i++ ) {
+                console.log("stereawrawe", this.state.listings[i].gameId)
+            }
+        }), 
+        );
         
     }
 
@@ -95,7 +100,7 @@ class GamesList extends Component {
                 randomPicker={this.randomPicker}
                 randomButtonShow={this.state.randomButtonShow}
             />
-            <GameName 
+            <GameCard 
                 listings={this.state.listings} 
                 randomizedGame={this.state.randomizedGame}
                 playersRequired={this.state.playersRequired}

@@ -1,6 +1,7 @@
 import React from 'react';
+import GameImg from './GameImg'
 
-function GameName(props) {
+function GameCard(props) {
 
     return(
         <div className="row">
@@ -19,6 +20,7 @@ function GameName(props) {
                     <React.Fragment>
                         <div className="col-md-3 gamename-container" key={listing.gameId}>
                             <div className="gamename-container2">
+                                <GameImg image={listing.thumbnail}/>
                                 <img src ={listing.thumbnail}  alt="bg-thumbnail" />
                                 <p>{listing.name}   </p>
                                 <p>{listing.averageRating}</p>
@@ -34,7 +36,7 @@ function GameName(props) {
     );
 }
 
-export default GameName;
+export default GameCard;
 
 //props.listings && props.listings.map(listing => ( <p>{listing.id}</p>)) => only loads if data has been fully loaded 
 
