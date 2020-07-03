@@ -26,11 +26,11 @@ function GameCard(props) {
                     .map(
                         listing => ( 
                     <React.Fragment>
-                        <div className="gamename-container" key={listing.gameId}>
+                        <div className="gamename-container col" key={listing.gameId}>
                             <div className="gamename-container2 ">
                                 <GameImg image={listing.image}/>
                                 <GameTitle title={listing.name} className="game-title"/>
-                                <GameDescription />
+                                <GameDescription description={listing.description} gameId={listing.gameId} />
                                 <GameIcons 
                                     rating={listing.averageRating}
                                     maxPlayers={listing.maxPlayers}

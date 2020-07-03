@@ -16,7 +16,7 @@ function GameIcons(props) {
                 <img src={meeple} className="game-icons"></img>
             </div >
             <div className="col-4">
-                <p>{props.playingTime} mins</p>
+                <p>{props.playingTime}min</p>
                 <img src={stopwatch} className="game-icons"></img>
             </div>
         </div>

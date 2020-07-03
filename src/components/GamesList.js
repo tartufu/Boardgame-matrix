@@ -15,7 +15,7 @@ class GamesList extends Component {
     }
 
     componentDidUpdate() {
-
+        
     }
 
     findUsername = (e) => {
@@ -37,7 +37,7 @@ class GamesList extends Component {
     }
 
     randomPicker = (e) => {
-        // // TODOS, fix unresponsiveness
+        // TODOS, fix unresponsiveness
         let gameListings = {};
         Object.assign(gameListings, this.state);
         console.log("clone", gameListings);
@@ -56,9 +56,17 @@ class GamesList extends Component {
             listings: data,
             randomButtonShow: true
         }, function() {
+            let cloneListings = [...this.state.listings];
             for (let i = 0; i < this.state.listings.length; i++ ) {
-                console.log("stereawrawe", this.state.listings[i].gameId)
+                let bggId = "https://bgg-json.azurewebsites.net/thing/" + this.state.listings[i].gameId;
+                // console.log(i,cloneListings);
+                // fetch(bggId)
+                // .then(response => response.json())
+                // .then(data => cloneListings[i].description = data.description)
             }
+            // this.setState({
+            //     listings: cloneListings
+            // })
         }), 
         );
         
@@ -101,6 +109,7 @@ class GamesList extends Component {
                 randomButtonShow={this.state.randomButtonShow}
             />
             <GameCard 
+                loaded={this.state.loaded}
                 listings={this.state.listings} 
                 randomizedGame={this.state.randomizedGame}
                 playersRequired={this.state.playersRequired}
