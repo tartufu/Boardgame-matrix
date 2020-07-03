@@ -1,4 +1,5 @@
 import React from 'react';
+import Masonry from 'react-masonry-css';
 import GameImg from './GameImg';
 import GameTitle from './GameTitle';
 import GameDescription from './GameDescription';
@@ -15,14 +16,18 @@ function GameCard(props) {
                     }
                 </h2>
             </div>
+            <Masonry
+            breakpointCols={5}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column">
             {
                 props.listings && props.listings.filter(
                     listing => listing.maxPlayers >= props.playersRequired && listing.playingTime <= props.timeRequired)
                     .map(
                         listing => ( 
                     <React.Fragment>
-                        <div className="col-md-3 gamename-container" key={listing.gameId}>
-                            <div className="gamename-container2">
+                        <div className="gamename-container" key={listing.gameId}>
+                            <div className="gamename-container2 ">
                                 <GameImg image={listing.image}/>
                                 <GameTitle title={listing.name} className="game-title"/>
                                 <GameDescription />
@@ -36,6 +41,7 @@ function GameCard(props) {
                     </React.Fragment>
                 ))
             }
+            </Masonry>
         </div>
         
     );

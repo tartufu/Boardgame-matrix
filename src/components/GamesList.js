@@ -10,7 +10,7 @@ class GamesList extends Component {
         randomButtonShow: false
     };
 
-    componentDidMount() {
+    componentDidMount() {   
 
     }
 
@@ -118,3 +118,5 @@ export default GamesList;
 //TODOs retrieve user game list from boardgame api
 
 //https://stackoverflow.com/questions/53121140/react-set-state-doesnt-update-in-fetch-success-function-on-key-up-event
+
+// https://www.npmjs.com/package/react-masonry-css
