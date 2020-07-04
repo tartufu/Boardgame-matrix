@@ -18,11 +18,19 @@ code {
 } */
 
 body {
-  /* background-color: blue; */
+  /* background-color: #5998C5; */
+  background-image: url("/site-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header-title-text, .username-game-list {
   text-align: center;
+  color:black;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+
 }
 
 .main-body {
@@ -31,10 +39,15 @@ body {
   margin: 0 auto;
 }
 
+.username-game-div {
+  /* background-color: honeydew; */
+}
+
 .username-main-form {
-  max-width: 960px;
+  max-width: 80%;
   margin: 0 auto;
   text-align: center;
+  /* border: 1px solid red; */
 }
 
 .username-main-form > form {
@@ -58,6 +71,9 @@ body {
   box-sizing: border-box;
   /* border: 1px solid green; */
   background-color: #FFFECB;
+  /* box-shadow: 5px 10px #888888; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   border-radius: 24px;
   overflow: hidden;
 }
@@ -152,9 +168,39 @@ body {
   background-clip: padding-box;
 }
 
+.submit-btn {
+  background-color: #58355E;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #3D2541;
+  color: white;
+}
+
+.random-btn {
+  background-color: #A5402D;
+  color: white;
+}
+
+.random-btn:hover {
+  background-color: #803123;
+  color: white;
+}
+
+.input-field {
+  background: indigo;
+  border-radius: 25px;;
+}
+
+
+
 
 
 /* .img-box {
   object-fit: cover;
   max-width: 100%;
 } */
+
+
+/* https://coolors.co/58355e-a5402d-fea82f-fffecb-5998c5 */

@@ -19,6 +19,7 @@ class GamesList extends Component {
     }
 
     findUsername = (e) => {
+        e.preventDefault();
         this.setState({
             username: e.target.value
         });
@@ -31,6 +32,7 @@ class GamesList extends Component {
     }
 
     submitPlayTime = (e) => {
+        e.preventDefault();
         this.setState({
             timeRequired: e.target.value
         })
@@ -38,13 +40,15 @@ class GamesList extends Component {
 
     randomPicker = (e) => {
         // TODOS, fix unresponsiveness
+        e.preventDefault();
         let gameListings = {};
         Object.assign(gameListings, this.state);
         console.log("clone", gameListings);
         let gameArray = this.shuffleArray(gameListings.listings);
         console.log("shuffle", gameArray)
         this.setState({
-            randomizedGame: gameArray[0]
+            listings: gameArray,
+            // randomizedGame: gameArray[0]
         })
     }
 

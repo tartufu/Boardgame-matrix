@@ -17,19 +17,35 @@ class Username extends Component {
     
     render() {
         return(
-        <div>   
+        <div className="username-game-div">   
             <h2 className="username-game-list"> {this.props.username} Game's List</h2>
                 <div className="username-main-form">
                 <form onSubmit={this.handleSubmit} >
-                    <div className="form-row">
-                        <input type="text" onChange={this.props.findUsername} placeholder="John" required/>
-                        <input type="number" min="1"  onChange={this.props.submitPlayers} placeholder="Players" />
-                        <input type="number" min="1"  onChange={this.props.submitPlayTime} placeholder="Game Time" />
-                        <input type="submit" className="btn btn-primary" />
-                        {
-                            this.props.randomButtonShow && 
-                        <input type="submit" className="btn btn-success" value="Random Game" onClick={this.props.randomPicker}/>
-                        }
+                    <div className="form-row align-items-center">
+                        <div classname="col-auto">
+                                {/* <label for="username">BGG User</label> */}
+                            <input classname="input-field" type="text" onChange={this.props.findUsername} placeholder="John" required/>
+                        </div>
+
+                        <div className="col-auto">
+                            <input classname="input-field" type="number" min="1"  onChange={this.props.submitPlayers} placeholder="Players" />
+                        </div>
+
+                        <div className="col-auto">
+                            <input classname="input-field" type="number" min="1"  onChange={this.props.submitPlayTime} placeholder="Game Time" />
+                        </div>
+
+                        <div className="col-auto">
+                            <input type="submit" className="btn submit-btn" />
+                        </div>
+
+                        <div className="col-auto">
+                            {
+                                this.props.randomButtonShow && 
+                            <input type="submit" className="btn random-btn" value="Random Shuffle" onClick={this.props.randomPicker}/>
+                            }                        
+                        </div>
+
                     </div>
                 </form>
                 </div>
