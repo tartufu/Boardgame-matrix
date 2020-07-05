@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import GameCard from './GameCard';
 import Username from './Username';
+import Instructions from './Instructions';
 
 class GamesList extends Component {
     state = {
         username: '',
-        playersRequired: 1,
+        playersRequired: 0,
         timeRequired: 999,
-        randomButtonShow: false
+        randomButtonShow: false,
+        dataLoaded: false
     };
 
     componentDidMount() {   
@@ -58,7 +60,8 @@ class GamesList extends Component {
         .then(response => response.json())
         .then(data => this.setState({ 
             listings: data,
-            randomButtonShow: true
+            randomButtonShow: true,
+            dataLoaded: true
         }, function() {
             let cloneListings = [...this.state.listings];
             for (let i = 0; i < this.state.listings.length; i++ ) {
@@ -111,6 +114,9 @@ class GamesList extends Component {
                 submitPlayTime={this.submitPlayTime}
                 randomPicker={this.randomPicker}
                 randomButtonShow={this.state.randomButtonShow}
+            />
+            <Instructions 
+                dataLoaded={this.state.dataLoaded}
             />
             <GameCard 
                 loaded={this.state.loaded}

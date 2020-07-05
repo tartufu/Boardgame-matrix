@@ -9,15 +9,24 @@ function GameIcons(props) {
         <div className="row game-icons-box">
             <div className="col-4">
                 <p>{props.rating}</p>
-                <img src={chart} className="game-icons"></img>
+                <div className="text-center">
+                  <img src={chart} className="game-icons"></img>
+                </div>
             </div>
+
             <div className="col-4">
-                <p>{props.maxPlayers} P</p>
-                <img src={meeple} className="game-icons"></img>
+                <p> {props.minPlayers} - {props.maxPlayers}</p>
+                <div className="text-center">
+                  <img src={meeple} className="game-icons"></img>
+                </div>
+
             </div >
             <div className="col-4">
                 <p>{props.playingTime}min</p>
-                <img src={stopwatch} className="game-icons"></img>
+                <div className="text-center">
+                  <img src={stopwatch} className="game-icons"></img>
+                </div>
+
             </div>
         </div>
     );

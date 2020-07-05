@@ -7,6 +7,13 @@ import GameIcons from './GameIcons';
 
 function GameCard(props) {
 
+    const breakpointColumnsObj = {
+        default: 5,
+        1100: 3,
+        700: 2,
+        500: 1
+      };
+
     return(
         <div className="row">
             <div className="col-12">
@@ -17,7 +24,7 @@ function GameCard(props) {
                 </h2>
             </div>
             <Masonry
-            breakpointCols={5}
+            breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
             {
@@ -34,6 +41,7 @@ function GameCard(props) {
                                 <GameIcons 
                                     rating={listing.averageRating}
                                     maxPlayers={listing.maxPlayers}
+                                    minPlayers={listing.minPlayers}
                                     playingTime={listing.playingTime}
                                 />
                             </div>
