@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import GameCard from './GameCard';
 import Username from './Username';
 import Instructions from './Instructions';
+import InputRange from 'react-input-range';
+import ReactSlider from 'react-slider';
+
 
 class GamesList extends Component {
     state = {
@@ -9,7 +12,7 @@ class GamesList extends Component {
         playersRequired: 0,
         timeRequired: 999,
         randomButtonShow: false,
-        dataLoaded: false
+        dataLoaded: false,
     };
 
     componentDidMount() {   
@@ -33,10 +36,25 @@ class GamesList extends Component {
         })
     }
 
+    submitPlayersTest = (e) => {
+        console.log("SUCECESSSS");
+        console.log(e);
+        this.setState({
+            minPlayersRequired: e[0],
+            maxPlayersRequired: e[1]
+        })
+    }
+
     submitPlayTime = (e) => {
         e.preventDefault();
         this.setState({
             timeRequired: e.target.value
+        })
+    }
+
+    submitPlayTimeTest = (e) => {
+        this.setState({
+            timeRequired: e
         })
     }
 
@@ -115,6 +133,44 @@ class GamesList extends Component {
                 randomPicker={this.randomPicker}
                 randomButtonShow={this.state.randomButtonShow}
             />
+            <div className="react-slider-section">
+                <ReactSlider
+                    className="horizontal-slider"
+                    thumbClassName="slider-thumb"
+                    trackClassName="slider-track"
+                    defaultValue={[1, 10]}
+                    ariaLabel={['Lower thumb', 'Upper thumb']}
+                    ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                    renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                    pearling
+                    minDistance={1}
+                    min={1}
+                    max={10}
+                    // onBeforeChange={val => console.log('onBeforeChange value:', val)}
+                    // onChange={val => console.log('onChange value:', val)}
+                    // onAfterChange={val => console.log('onAfterChange value:', val)}
+                    onAfterChange={val => this.submitPlayersTest(val)}
+
+                />
+
+                <ReactSlider
+                    className="horizontal-slider"
+                    thumbClassName="slider-thumb"
+                    trackClassName="slider-track"
+                    ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                    renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                    pearling
+                    minDistance={15}
+                    min={15}
+                    max={300}
+                    step={15}
+                    // onBeforeChange={val => console.log('onBeforeChange value:', val)}
+                    // onChange={val => console.log('onChange value:', val)}
+                    // onAfterChange={val => console.log('onAfterChange value:', val)}
+                    onAfterChange={val => this.submitPlayTimeTest(val)}
+
+                />    
+            </div>
             <Instructions 
                 dataLoaded={this.state.dataLoaded}
             />

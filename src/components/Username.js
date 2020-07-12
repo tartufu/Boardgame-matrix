@@ -17,6 +17,7 @@ class Username extends Component {
     
     render() {
         return(
+        <React.Fragment>
         <div className="username-game-div">   
             <h2 className="username-game-list"> {this.props.username} Game's List</h2>
                 <div className="username-main-form">
@@ -51,8 +52,12 @@ class Username extends Component {
                 </div>
             <br />
         </div>
+        </React.Fragment>
         )
     }
   }
 
 export default Username;
+
+
+// https://www.npmjs.com/package/react-input-range
