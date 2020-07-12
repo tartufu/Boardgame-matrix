@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import GameCard from './GameCard';
 import Username from './Username';
 import Instructions from './Instructions';
-import InputRange from 'react-input-range';
 import ReactSlider from 'react-slider';
 
 
 class GamesList extends Component {
     state = {
         username: '',
-        playersRequired: 0,
-        timeRequired: 999,
+        playersRequired: [1, 10],
+        timeRequired: [0, 999],
         randomButtonShow: false,
         dataLoaded: false,
     };
@@ -40,19 +39,18 @@ class GamesList extends Component {
         console.log("SUCECESSSS");
         console.log(e);
         this.setState({
-            minPlayersRequired: e[0],
-            maxPlayersRequired: e[1]
+            playersRequired: e
         })
     }
+
+    // submitPlayTime = (e) => {
+    //     e.preventDefault();
+    //     this.setState({
+    //         timeRequired: e.target.value
+    //     })
+    // }
 
     submitPlayTime = (e) => {
-        e.preventDefault();
-        this.setState({
-            timeRequired: e.target.value
-        })
-    }
-
-    submitPlayTimeTest = (e) => {
         this.setState({
             timeRequired: e
         })
@@ -134,6 +132,9 @@ class GamesList extends Component {
                 randomButtonShow={this.state.randomButtonShow}
             />
             <div className="react-slider-section">
+                <div className="row">
+                <div className="col-md-6">
+                <h3> Number of Players </h3>
                 <ReactSlider
                     className="horizontal-slider"
                     thumbClassName="slider-thumb"
@@ -152,24 +153,30 @@ class GamesList extends Component {
                     onAfterChange={val => this.submitPlayersTest(val)}
 
                 />
+                </div>
 
-                <ReactSlider
-                    className="horizontal-slider"
-                    thumbClassName="slider-thumb"
-                    trackClassName="slider-track"
-                    ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                    renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                    pearling
-                    minDistance={15}
-                    min={15}
-                    max={300}
-                    step={15}
-                    // onBeforeChange={val => console.log('onBeforeChange value:', val)}
-                    // onChange={val => console.log('onChange value:', val)}
-                    // onAfterChange={val => console.log('onAfterChange value:', val)}
-                    onAfterChange={val => this.submitPlayTimeTest(val)}
+                <div className="col-md-6">
+                <h3>Game Time</h3> 
+                    <ReactSlider
+                        className="horizontal-slider"
+                        thumbClassName="slider-thumb"
+                        trackClassName="slider-track"
+                        ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                        renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                        pearling
+                        minDistance={15}
+                        min={15}
+                        max={300}
+                        step={15}
+                        defaultValue={[15, 300]}
+                        // onBeforeChange={val => console.log('onBeforeChange value:', val)}
+                        // onChange={val => console.log('onChange value:', val)}
+                        // onAfterChange={val => console.log('onAfterChange value:', val)}
+                        onAfterChange={val => this.submitPlayTime(val)}
 
-                />    
+                    />    
+                </div>
+                </div>
             </div>
             <Instructions 
                 dataLoaded={this.state.dataLoaded}

@@ -32,9 +32,9 @@ class Username extends Component {
                             <input classname="input-field" type="number" min="1"  onChange={this.props.submitPlayers} placeholder="Players" />
                         </div>
 
-                        <div className="col-auto">
+                        {/* <div className="col-auto">
                             <input classname="input-field" type="number" min="1"  onChange={this.props.submitPlayTime} placeholder="Game Time" />
-                        </div>
+                        </div> */}
 
                         <div className="col-auto">
                             <input type="submit" className="btn submit-btn" />

@@ -186,8 +186,9 @@ body {
   border-radius: 25px;;
 }
 
-.react-slider-section {
+.react-slider-section h3 {
   /* max-width: 90%; */
+  text-align: center;
 }
 
 .horizontal-slider {
