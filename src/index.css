@@ -202,28 +202,21 @@ body {
   width: 50px;
   height: 4px;
   line-height: 45px;
-  background-color: green;
+  background-color: #5998C5;
   height: 100%;
   text-align: center;
+  font-weight: bold;
   border-radius: 50%;
   color: white;
 }
 
 .slider-track {
-  background-color: salmon;
+  background-color: #FEA82F;
   margin: 0 5px;
   top: 20px;
   height: 10px;
 }
 
-
-
-
-
-/* .img-box {
-  object-fit: cover;
-  max-width: 100%;
-} */
 
 
 /* https://coolors.co/58355e-a5402d-fea82f-fffecb-5998c5 */

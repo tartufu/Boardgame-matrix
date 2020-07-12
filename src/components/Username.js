@@ -28,9 +28,9 @@ class Username extends Component {
                             <input classname="input-field" type="text" onChange={this.props.findUsername} placeholder="John" required/>
                         </div>
 
-                        <div className="col-auto">
+                        {/* <div className="col-auto">
                             <input classname="input-field" type="number" min="1"  onChange={this.props.submitPlayers} placeholder="Players" />
-                        </div>
+                        </div> */}
 
                         {/* <div className="col-auto">
                             <input classname="input-field" type="number" min="1"  onChange={this.props.submitPlayTime} placeholder="Game Time" />
