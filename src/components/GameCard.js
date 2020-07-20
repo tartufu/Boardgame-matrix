@@ -31,23 +31,24 @@ function GameCard(props) {
                 props.listings && props.listings.filter(
                     listing => (listing.maxPlayers <= props.playersRequired[1] && listing.minPlayers >= props.playersRequired[0]) && (listing.playingTime <= props.timeRequired[1] && listing.playingTime >= props.timeRequired[0]))
                     .map(
-                        listing => ( 
-                    <React.Fragment>
-                        <div className="gamename-container col" key={listing.gameId}>
-                            <div className="gamename-container2 ">
-                                <GameImg image={listing.image}/>
-                                <GameTitle title={listing.name} className="game-title"/>
-                                <GameDescription description={listing.description} gameId={listing.gameId} />
-                                <GameIcons 
-                                    rating={listing.averageRating}
-                                    maxPlayers={listing.maxPlayers}
-                                    minPlayers={listing.minPlayers}
-                                    playingTime={listing.playingTime}
-                                />
-                            </div>
-                        </div>
-                    </React.Fragment>
-                ))
+                        listing => {
+                            return (
+                                <React.Fragment>
+                                    <div className="gamename-container col" key={listing.gameId}>
+                                        <div className="gamename-container2 ">
+                                            <GameImg image={listing.image} />
+                                            <GameTitle title={listing.name} className="game-title" />
+                                            <GameDescription description={listing.description} gameId={listing.gameId} />
+                                            <GameIcons
+                                                rating={listing.averageRating}
+                                                maxPlayers={listing.maxPlayers}
+                                                minPlayers={listing.minPlayers}
+                                                playingTime={listing.playingTime} />
+                                        </div>
+                                    </div>
+                                </React.Fragment>
+                            );
+                        })
             }
             </Masonry>
         </div>

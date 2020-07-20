@@ -10,7 +10,6 @@ function App() {
       <div className="main-body">
         <Header />
         <GamesList />
-        {/* <TestBox /> */}
       </div>
     </div>
   );

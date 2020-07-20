@@ -1,4 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# This is CS50 Final Project by Chang Hao
+
+## Project Name: Boardgame Wizzy Hat
+
+```Boardgame wizzy hat is a React web app that sends an API get call to the Boardgame Geek(BGG) api using your BGG username and renders a list of your owned games. Each game is dynamically rendered as a card with information showcasing the game rating,  number of players, game time as well as a direct link to the game's webpage on BGG as a new browser tab. As the list of owned games is stored in the state, users can filter the games to show games that fit their criteria through number of players and gametime. ```
+
+## Languages and Libraries used 
+1. HTML
+2. CSS
+3. Javascript 
+4. React Framework 
+5. Bootstrap Library 
+6. react-masonry-css
+7. React Slider
+8. BoardGameGeek JSON APIs
+
+## Usage
+1. Key in your BGG Username(Tartufu) and click submit 
+2. Filter according to the number of players and game time you require
+3. Click random shuffle to shuffle the game cards
+
+
+### Source Code Repo 
+https://github.com/tartufu/Boardgame-matrix
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -65,4 +89,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
