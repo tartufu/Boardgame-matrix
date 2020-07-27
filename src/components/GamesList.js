@@ -74,26 +74,31 @@ class GamesList extends Component {
         let userBgg = 'https://bgg-json.azurewebsites.net/collection/' + this.state.username;
         fetch(userBgg)
         .then(response => response.json())
-        .then(data => this.setState({ 
-            listings: data,
-            randomButtonShow: true,
-            dataLoaded: true
-        }, function() {
-            let cloneListings = [...this.state.listings];
-            for (let i = 0; i < this.state.listings.length; i++ ) {
-                let bggId = "https://bgg-json.azurewebsites.net/thing/" + this.state.listings[i].gameId;
-                // console.log(i,cloneListings);
-                // fetch(bggId)
-                // .then(response => response.json())
-                // .then(data => cloneListings[i].description = data.description)
+        .then((data) => {
+            let ownedGamesArray = [];
+            console.log(Array.isArray(data));
+            console.log(data.length)
+            console.log(data);
+            for(let i = 0; i < data.length; i++) {
+                if (data[i].owned) {
+                    console.log("yay")
+                    ownedGamesArray.push(data[i])
+                }
             }
-            // this.setState({
-            //     listings: cloneListings
-            // })
-        }), 
-        );
-        
+            console.log("GAMESESSS", ownedGamesArray);
+            this.setState({ 
+                listings: ownedGamesArray,
+                randomButtonShow: true,
+                dataLoaded: true
+            });
+        })
+        .then(console.log("aweaweawe"))     
     }
+
+    // data => function() {
+    //     console.log(data);
+
+    // }
 
     shuffleArray = (array) => {
         var currentIndex = array.length, temporaryValue, randomIndex;
