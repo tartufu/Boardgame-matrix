@@ -8,7 +8,7 @@ import ReactSlider from 'react-slider';
 class GamesList extends Component {
     state = {
         username: '',
-        playersRequired: [1, 10],
+        playersRequired: 4,
         timeRequired: [0, 999],
         randomButtonShow: false,
         dataLoaded: false,
@@ -141,10 +141,11 @@ class GamesList extends Component {
                 <div className="col-md-6">
                 <h3> Number of Players </h3>
                 <ReactSlider
+
                     className="horizontal-slider"
                     thumbClassName="slider-thumb"
                     trackClassName="slider-track"
-                    defaultValue={[1, 10]}
+                    defaultValue={4}
                     ariaLabel={['Lower thumb', 'Upper thumb']}
                     ariaValuetext={state => `Thumb value ${state.valueNow}`}
                     renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}

@@ -29,7 +29,7 @@ function GameCard(props) {
             columnClassName="my-masonry-grid_column">
             {
                 props.listings && props.listings.filter(
-                    listing => (listing.maxPlayers <= props.playersRequired[1] && listing.minPlayers >= props.playersRequired[0]) && (listing.playingTime <= props.timeRequired[1] && listing.playingTime >= props.timeRequired[0]))
+                    listing => ( listing.maxPlayers == props.playersRequired) && (listing.playingTime <= props.timeRequired[1] && listing.playingTime >= props.timeRequired[0]))
                     .map(
                         listing => {
                             return (
